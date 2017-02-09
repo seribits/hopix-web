@@ -1,0 +1,8 @@
+static/bin/*.js
+!static/bin/
+static/css/*.css
+!static/css
+envs/web_production.env
+envs/web_secrets.env
+
+webpack.config.production.js

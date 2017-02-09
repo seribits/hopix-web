@@ -1,0 +1,58 @@
+// Color scheme.
+
+// Base Palette
+
+purple-base-color = darken(rgba(147, 98, 148, 1), 10)
+yellow-base-color = rgba(226, 182, 71, 1)
+red-base-color = rgba(222, 75, 77, 1)
+black-base-color = rgba(33, 52, 59, 1)
+green-base-color = rgba(104, 180, 76, 1)
+
+// Base Grays Palette
+darker-base-gray = rgba(166, 166, 166, 1)
+dark-base-gray = rgba(220, 220, 220, 1)
+regular-base-gray = rgba(232, 232, 232, 1)
+light-base-gray = rgba(240, 240, 240, 1)
+
+gray-base-darknest = darken(darker-base-gray, 20%)
+gray-base-darker = darker-base-gray
+gray-base-dark = dark-base-gray
+gray-base-regular = regular-base-gray
+gray-base-light = light-base-gray
+
+// ui color stack
+dark-primary-color = darken(yellow-base-color, 20)
+primary-color = yellow-base-color
+light-primary-color = lighten(yellow-base-color, 20)
+accent-color = purple-base-color
+dark-accent-color = black-base-color
+dark-accent-transparent-color = rgba(33, 52, 59, .4)
+dark-black-color = rgba(4, 4, 4, 1)
+
+
+// Text colors.
+text-light-icons-color = #FEFEFE
+text-dark-icons-color = rgba(4, 4, 4, 1)
+text-light-primary-color = #FEFEFE
+text-light-secondary-color = #757575
+text-dark-primary-color = #212121
+
+// Shadow colors.
+shadow-darknest-color = rgba(4, 4, 4, .6)
+shadow-dark-color = rgba(44, 44, 44, .2)
+
+// Neutral colors.
+divider-color = #BDBDBD
+warning-color = rgba(255, 229, 94, 1)
+error-color = red-base-color
+
+//font settings
+
+font-primary-normal = 'graviola'
+font-default-size = rem-calc(18)
+//defaults
+
+.wrapper
+  background-color dark-accent-color
+  font-family font-primary-normal
+  color text-light-primary-color

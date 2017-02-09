@@ -1,0 +1,93 @@
+extends ../index.pug
+
+block title
+  title hopix by unam
+
+block header
+  header(class='header-login')
+    figure(class='header-login__figure')
+      img(class='header-login__figure__img' src='/static/logo/logo.png')
+    button(
+      class='btn  btn--login  header-login__btn'
+      data-login-form='open-btn'
+    ) Iniciar sesión
+  form(
+    class='floating-login  floating-login--hide'
+    data-login='form'
+    method='post'
+    action='/login'
+  )
+    input(
+      type='text'
+      name='username'
+      class='input  floating-login__input'
+      data-login='username'
+      placeholder='tu@email.com'
+    )
+    input(
+      type='password'
+      name='password'
+      data-login='password'
+      class='input  floating-login__input'
+      placeholder='Contraseña'
+    )
+    input(
+      type='hidden'
+      value= csrfToken
+      data-login='data-token'
+      name='_csrf'
+    )
+    button(class='btn  btn--form  floating-login__btn') Login
+    span(
+        class='floating-login__message  floating-login__message--hide'
+        data-login='message'
+    )
+
+
+block content
+  section(class='section-login  section-login--users')
+    section(class='section-login__section-welcome')
+      article(
+        class='section-login__section-welcome__message'
+      )= welcomeMessage
+    form(
+      class='section-login__form'
+      data-registry='form'
+      method='post'
+      action='/web/api/users'
+    )
+      input(
+        class='input  section-login__form__field'
+        type='text'
+        placeholder='tu@email.com'
+        data-registry='data-email'
+      )
+      input(
+        class='input  section-login__form__field'
+        type='password'
+        placeholder='Contraseña'
+        data-registry='data-password'
+      )
+      input(
+        class='input  section-login__form__field'
+        type='password'
+        placeholder='repite tu contraseña :)'
+        data-registry='data-password-r'
+        )
+      input(
+        type='hidden'
+        value= csrfToken
+        name='_csrf'
+        data-registry='data-token'
+      )
+      button(
+        class='btn  btn--form  section-login__form__btn'
+        data-registry='create'
+      ) Crea una cuenta
+      span(
+        class='section-login__form__message-error  section-login__form__message-error--hide'
+        data-registry='message'
+      )
+
+block scripts
+  script(src='/static/bin/login.bundle.js')

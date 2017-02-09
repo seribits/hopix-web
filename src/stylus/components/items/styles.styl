@@ -1,0 +1,22 @@
+.area-item
+  grid('row', 'center', justify: 'center')
+  overflow hidden
+  height rem-calc(70)
+  background-color gray-base-regular
+  border-bottom rem-calc(2) solid divider-color
+  &:last-child
+    border-bottom 0
+  &__figure
+    background-color gray-base-darker
+    margin 0
+    width rem-calc(45)
+    height rem-calc(45)
+    position relative
+    border-radius 50%
+    overflow hidden
+    margin-right rem-calc(10)
+    &__img
+      img-center(100%, 100%)
+      background-color gray-base-darker
+  &__name
+    cell(1, 2)

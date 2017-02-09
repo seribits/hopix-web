@@ -1,0 +1,45 @@
+extends ../index.pug
+
+block title
+  title Inicia sesión
+
+block header
+  include ../header.pug
+
+block content
+  section(class='section-login  section-login--admin')
+    form(
+      class='section-login__form'
+      data-login='form'
+      method='post'
+      action='/admin/login'
+    )
+      input(
+        class='input  section-login__form__field'
+        type='text'
+        placeholder='Usuario'
+        data-login='data-username'
+      )
+      input(
+        class='input  section-login__form__field'
+        type='password'
+        placeholder='Contraseña'
+        data-login='data-password'
+      )
+      input(
+        type='hidden'
+        value= csrfToken
+        name='_csrf'
+        data-login='data-token'
+      )
+      button(
+        class='btn  btn--form section-login__form__btn'
+        data-login='submit'
+      ) Iniciar Sesión
+      span(
+        class='section-login__form__message-error'
+        data-login='message'
+      )
+
+block scripts
+  script(src='/static/bin/adminlogin.bundle.js')
